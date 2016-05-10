@@ -1,0 +1,48 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>4.4.&nbsp;Manage organisation unit group sets</title><link rel="stylesheet" type="text/css" href="resources/css/docbook_bsd.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><link rel="home" href="dhis2_user_manual_en.html" title="DHIS User Manual"><link rel="up" href="ch04.html" title="Chapter&nbsp;4.&nbsp;Manage organisation units"><link rel="prev" href="ch04s03.html" title="4.3.&nbsp;Manage organisation unit groups"><link rel="next" href="ch04s05.html" title="4.5.&nbsp;Assign names to organisation unit levels"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">4.4.&nbsp;Manage organisation unit group sets</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch04s03.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter&nbsp;4.&nbsp;Manage organisation units</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch04s05.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="ou_groupsets"></a>4.4.&nbsp;Manage organisation unit group sets</h2></div></div></div><p>Group sets can be understood as a flexible tool to add more categorisation to organisation
+      units. Any number of group sets can be added, but as a default start all databases will have
+      the two group sets "Type" and "Ownership". Using these group sets will
+      simplify how reporting is done, and facilitate analysis through the use of tools such as Excel
+      PivotTables.</p><p>While a group set like "Type" describes a measure dimension, the actual
+      categories are represented by the groups, and the categorisation of an organisation unit
+      through the organisation unit's group memberships. This can be understood as a parallel
+      hierarchy of organisation units with the group set as the root ("Type"), the groups
+      at level 2 (e.g. "Clinic", "Hospital", "Dispensary"), and the
+      actual organisation units at level 3. The group set can as such provide additional information
+      and dimensionality to the data analysis as data is easily filtered, organised, or aggregated
+      by groups within a group set. </p><p>For this aggregation to work without any duplication in the data some rules are necessary.
+      A group set is always exclusive, which means that an organisation unit cannot be member of
+      more than one group in a group set. Therefore, when creating a new organisational unit, you
+      will only be allowed to select a single organisational group membership for each group set.
+      Furthermore it is possible to define whether a group set is compulsory or not, which will
+      affect the completeness of the data when analysing data using group sets. Compulsory means
+      that ALL organisation units must be member of a group in that group set. </p><p>We recommend that you approach the organisation unit grouping in the following sequence
+      (and one group set at a time):</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Define a new group set, such as "Location". </p></li><li class="listitem"><p>Add new groups (such as "Urban", "Rural" and
+          "Peri-urban"). Once all groups have been defined, return to the organisational
+          unit group set and assign each of the desired groups to the group set.</p></li><li class="listitem"><p>Go back to each group, one by one, go to edit mode and assign the organisation units
+          that should be member of the group. Should you follow this route, you can place multiple
+          organisation units at a time in a group. However, you must be careful not to place the
+          same organisational units in two groups which itself is a member of an organisation unit
+          group set. This will result in a data integrity violation. If you have organisation unit
+          groups which are not exclusive, they should not be members of a group. </p></li><li class="listitem"><p>A better way to ensure that you do not mistakenly assign an organisation unit to
+          multiple members of a group set is you can use the edit feature of each organisational
+          unit to assign memberships to each group set. You will only be able to assign a single
+          organisation unit at a time however.</p></li></ol></div><p>It is important to keep in mind when using the "Organisational unit group" set
+      function, that unless great care is taken, organisational units can be assigned to multiple
+      groups of a group set. This can be checked through the "Data Integrity" module,
+      which will report which organisational units are not members of a compulsory organisational
+      unit group set, and which organisational units have been assigned to more than one member of a
+      group set. </p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e1532"></a>4.4.1.&nbsp;Create an organisation unit group set</h3></div></div></div><p></p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="ou_groupsets_edit"></a>4.4.2.&nbsp;Edit an organisation unit group set</h3></div></div></div><p>Click on the name of the organisation unit group set you want to modify, followed by
+        "Edit" from the context menu which will appear. The following properties can be
+        defined in the Edit (or Create new) window:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Name: Provide a precise name for the group set.</p></li><li class="listitem"><p>Description: Describe the phenomena the group set is measuring/capturing.</p></li><li class="listitem"><p>Compulsory: Indicate whether ALL organisation units need to be member of a group in
+            this group set or not.</p></li><li class="listitem"><p>Available groups/Selected groups: Here you assign groups to your group set by using
+            the arrow buttons to move highlighted groups between the two lists (/selected). If no
+            groups appear in the list then you must go to organisation unit groups and create new
+            groups there first. Note that assigning groups that will violate the exclusive rule on
+            group sets is not possible, e.g. adding a group that already has assigned an
+            organisation unit that again is already member of a group that has already been selected
+            by this group set, will not be possible since one organisation unit will end up with two
+            group memberships in the same group set. To avoid such situations we recommend first
+            adding groups to group sets, and then organisation units to groups.</p></li></ul></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch04s03.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch04.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch04s05.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">4.3.&nbsp;Manage organisation unit groups&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="dhis2_user_manual_en.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;4.5.&nbsp;Assign
+      names to organisation unit levels</td></tr></table></div></body></html>
